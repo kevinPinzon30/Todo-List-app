@@ -1,26 +1,31 @@
 
 class ToDo {
-  final String name;
+  final String title;
+  final String description;
   String? id;
 
   ToDo({
-    required this.name,
+    required this.title,
+    required this.description,
   });
 
   factory ToDo.fromMap(Map<String, dynamic> map) {
     return ToDo(
-      name: map['name'],
+      title: map['title'],
+      description: map['description'],
     );
   }
 
   Map<String, dynamic> toMap() {
     return {
       'id': id,
-      'name': name,
+      'title': title,
+      'description': description,
     };
   }
 
   List<Object?> get props => [
-    name,
+    title,
+    description,
   ];
 }
