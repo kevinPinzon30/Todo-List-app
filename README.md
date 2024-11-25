@@ -151,12 +151,13 @@ Este proyecto fue desarrollado utilizando **Flutter 3.24.4**. A continuación se
   ```bash
   flutter --version
 
-
 ## 6. Conclusión
 
 Esta documentación cubre las funcionalidades principales, la estructura del proyecto, y cómo instalar y ejecutar la aplicación localmente. Asegúrate de seguir los pasos de configuración de Firebase y las herramientas necesarias para comenzar a trabajar en el proyecto.
 
 ---
 Para **descargar la aplicación** directamente, puedes acceder al siguiente enlace de **Firebase App Distribution**:
-- (https://appdistribution.firebase.dev/i/47bbcd7a86202701)
+---
+  ```bash
+https://appdistribution.firebase.dev/i/47bbcd7a86202701
 ```
