@@ -15,7 +15,6 @@ La aplicación proporciona una interfaz sencilla y efectiva para gestionar tarea
 ## 2. Estructura del Proyecto
 
 La estructura de directorios y archivos de este proyecto sigue una convención clara para facilitar la navegación y el mantenimiento del código. A continuación se detalla la organización de los archivos principales en el proyecto.
-GoogleService-Info.plist
 ```
 /lib
 /features
@@ -137,12 +136,27 @@ La navegación entre las pantallas de la aplicación se gestiona con **GoRouter*
    ```bash
    flutter run
    ```
+## 5. Versión de Flutter Utilizada
 
-## 5. Conclusión
+Este proyecto fue desarrollado utilizando **Flutter 3.24.4**. A continuación se detalla la versión específica y las herramientas utilizadas en el entorno de desarrollo:
+
+- **Flutter Version**: 3.24.4
+- **Dart Version**: 3.5.4
+- **Flutter Engine Revision**: db49896cf2
+- **Flutter SDK Revision**: 603104015d (5 weeks ago)
+- **DevTools Version**: 2.37.3
+
+### **Comandos de Flutter**
+- **Ver versión de Flutter**: Para verificar la versión instalada de Flutter, usa el siguiente comando:
+  ```bash
+  flutter --version
+
+
+## 6. Conclusión
 
 Esta documentación cubre las funcionalidades principales, la estructura del proyecto, y cómo instalar y ejecutar la aplicación localmente. Asegúrate de seguir los pasos de configuración de Firebase y las herramientas necesarias para comenzar a trabajar en el proyecto.
 
 ---
 Para **descargar la aplicación** directamente, puedes acceder al siguiente enlace de **Firebase App Distribution**:
-- https://appdistribution.firebase.dev/i/47bbcd7a86202701
+- (https://appdistribution.firebase.dev/i/47bbcd7a86202701)
 ```
