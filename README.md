@@ -143,5 +143,6 @@ La navegación entre las pantallas de la aplicación se gestiona con **GoRouter*
 Esta documentación cubre las funcionalidades principales, la estructura del proyecto, y cómo instalar y ejecutar la aplicación localmente. Asegúrate de seguir los pasos de configuración de Firebase y las herramientas necesarias para comenzar a trabajar en el proyecto.
 
 ---
-Para **descargar la aplicación** (https://drive.google.com/drive/folders/1p6hk-JtYHvOccdrQkm2U_khtyoOA88MV?usp=sharing).
+Para **descargar la aplicación** directamente, puedes acceder al siguiente enlace de **Firebase App Distribution**:
+- https://appdistribution.firebase.dev/i/47bbcd7a86202701
 ```
