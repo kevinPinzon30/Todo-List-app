@@ -137,7 +137,7 @@ class LoginScreen extends StatelessWidget {
 
   CustomInput _buildEmailField() {
     return CustomInput(
-      initialValue: "signe@luque.com",
+      initialValue: "kevin.alexander@pinzon.com",
       hintText: "Enter your email",
       inputFieldTitle: "Email",
       focusNode: emailNode,

@@ -5,7 +5,7 @@ class AuthState {
   final String password;
 
   const AuthState({
-    this.email = 'signe@luque.com',
+    this.email = 'kevin.alexander@pinzon.com',
     this.password = 'Test123@',
   });
 
@@ -19,10 +19,11 @@ class AuthState {
       );
 
   @override
-  List<Object> get props => [
-    email,
-    password,
-  ];
+  List<Object> get props =>
+      [
+        email,
+        password,
+      ];
 }
 
 class Initial extends AuthState {}

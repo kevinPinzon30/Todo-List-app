@@ -33,9 +33,12 @@ dependencies:
   go_router: ^14.3.0
   flutter_bloc: ^8.1.1
   lottie: ^2.0.0
-  firebase_core: ^3.8.0
-  firebase_auth: ^5.3.3
-  cloud_firestore: ^5.5.0
+#  firebase_core: ^3.8.0
+#  firebase_auth: ^5.3.3
+#  cloud_firestore: ^5.5.0
+  firebase_core: ^2.27.1
+  firebase_auth: ^4.17.9
+  cloud_firestore: ^4.0.0
   pull_to_refresh: ^2.0.0
   keyboard_actions: ^4.2.0
   google_fonts: ^4.0.3
