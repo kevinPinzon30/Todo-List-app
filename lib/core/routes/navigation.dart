@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:todo/features/to_do/presentation/screens/to_do_list.dart';
 
 import '../../features/authentication/presentation/screens/login.dart';
+import '../../features/init/presentation/screens/welcome_screen.dart';
 
 class AppRouter {
   final GoRouter router = GoRouter(
@@ -10,7 +11,7 @@ class AppRouter {
       GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return LoginScreen();
+          return WelcomeScreen();
         },
         routes: <RouteBase>[
           GoRoute(

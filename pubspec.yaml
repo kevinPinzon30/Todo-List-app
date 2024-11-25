@@ -33,9 +33,9 @@ dependencies:
   go_router: ^14.3.0
   flutter_bloc: ^8.1.1
   lottie: ^2.0.0
-  firebase_core: ^2.16.0
-  firebase_auth: ^4.10.0
-  cloud_firestore: ^4.10.0
+  firebase_core: ^3.8.0
+  firebase_auth: ^5.3.3
+  cloud_firestore: ^5.5.0
   pull_to_refresh: ^2.0.0
   keyboard_actions: ^4.2.0
   google_fonts: ^4.0.3
@@ -44,6 +44,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  bloc_test: ^9.1.4
+  mockito: ^5.0.2
+  mocktail: ^1.0.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -58,7 +61,6 @@ flutter:
   assets:
     - assets/lotties/
     - assets/images/
-    - assets/icons/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

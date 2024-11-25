@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:todo/features/authentication/presentation/bloc/auth_bloc.dart';
 import 'package:todo/features/to_do/data/models/to_do_model.dart';
 import 'package:todo/features/to_do/presentation/widgets/add_task_dialog.dart';
 import 'package:todo/features/to_do/presentation/widgets/empty_state.dart';
@@ -10,6 +12,8 @@ import '../bloc/todo_bloc.dart';
 
 class TodoList extends StatelessWidget {
   final TodoBloc todoBloc = TodoBloc();
+  final AuthBloc authBloc = AuthBloc();
+
   final List<ToDo> toDosList = [];
   final RefreshController _refreshController =
       RefreshController(initialRefresh: false);
@@ -20,6 +24,9 @@ class TodoList extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => todoBloc..add(GetToDos()),
+        ),
+        BlocProvider<AuthBloc>(
+          create: (context) => authBloc,
         ),
       ],
       child: MultiBlocListener(
@@ -36,10 +43,28 @@ class TodoList extends StatelessWidget {
                 }
               },
             ),
+            BlocListener<AuthBloc, AuthState>(listener: (context, state) {
+              if (state is LogOutSuccessful) {
+                context.go('/login');
+              } else if (state is AuthError) {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text('Error: ${state.message}'),
+                ));
+              }
+            })
           ],
           child: Scaffold(
             appBar: AppBar(
+              automaticallyImplyLeading: false,
               title: const Text('To-Do List'),
+              actions: [
+                IconButton(
+                  icon: const Icon(Icons.exit_to_app),
+                  onPressed: () {
+                    authBloc.add(LogOut());
+                  },
+                ),
+              ],
             ),
             body: SmartRefresher(
               controller: _refreshController,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:keyboard_actions/keyboard_actions.dart';
 import 'package:todo/common/resource_images.dart';
 import 'package:todo/core/widgets/custom_button.dart';
@@ -31,6 +32,7 @@ class LoginScreen extends StatelessWidget {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text(successMessage),
             ));
+            context.go('/toDo');
           } else if (state is AuthError) {
             String? errorMessage;
             switch (state.code) {
@@ -69,15 +71,16 @@ class LoginScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          SizedBox(),
           Column(
             children: [
-              Center(child: SvgPicture.asset(loginImage, height: 100)),
+              Center(child: SvgPicture.asset(loginImage, height: 70)),
               Padding(
-                padding: const EdgeInsets.only(top: 40),
+                padding: const EdgeInsets.only(top: 20),
                 child: Text(
                   'Welcome Back',
                   style: TextStyle(
-                    fontSize: 32,
+                    fontSize: 26,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                     letterSpacing: 1.2,
@@ -94,9 +97,7 @@ class LoginScreen extends StatelessWidget {
               )
             ],
           ),
-          SingleChildScrollView(
-            child: _buildForm(),
-          ),
+          _buildForm(),
           CustomButton(
             text: "Log in",
             onPressed: () {
