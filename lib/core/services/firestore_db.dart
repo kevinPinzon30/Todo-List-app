@@ -4,13 +4,17 @@ class FirestoreDatabase {
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
   Future<QuerySnapshot> getCollection(String collectionName) async {
-    return await _firebaseFirestore.collection(collectionName).get();
+    // return await _firebaseFirestore.collection(collectionName).get();
+    return await _firebaseFirestore
+        .collection(collectionName)
+        .orderBy('createdAt', descending: false)
+        .get();
   }
 
   Future<DocumentSnapshot> getDocument(
-      String collectionName,
-      String documentId,
-      ) async {
+    String collectionName,
+    String documentId,
+  ) async {
     return await _firebaseFirestore
         .collection(collectionName)
         .doc(documentId)
@@ -19,10 +23,10 @@ class FirestoreDatabase {
 
   // get document from collection where field == value
   Future<DocumentSnapshot?> getDocumentWithQuery(
-      String collectionName,
-      Object field,
-      Object value,
-      ) async {
+    String collectionName,
+    Object field,
+    Object value,
+  ) async {
     final QuerySnapshot querySnapshot = await _firebaseFirestore
         .collection(collectionName)
         .where(field, isEqualTo: value)
@@ -37,17 +41,17 @@ class FirestoreDatabase {
   }
 
   Future<void> addDocument(
-      String collectionName,
-      Map<String, dynamic> data,
-      ) async {
+    String collectionName,
+    Map<String, dynamic> data,
+  ) async {
     await _firebaseFirestore.collection(collectionName).add(data);
   }
 
   Future<void> updateDocument(
-      String collectionName,
-      String documentId,
-      Map<String, dynamic> data,
-      ) async {
+    String collectionName,
+    String documentId,
+    Map<String, dynamic> data,
+  ) async {
     await _firebaseFirestore
         .collection(collectionName)
         .doc(documentId)
@@ -55,8 +59,15 @@ class FirestoreDatabase {
   }
 
   Future<DocumentSnapshot<Object?>> getDocumentFromReference(
-      DocumentReference documentReference,
-      ) async {
+    DocumentReference documentReference,
+  ) async {
     return await documentReference.get();
+  }
+
+  Future<void> deleteDocument(String collectionName, String documentId) async {
+    await _firebaseFirestore
+        .collection(collectionName)
+        .doc(documentId)
+        .delete();
   }
 }

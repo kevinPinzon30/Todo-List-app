@@ -18,4 +18,19 @@ class TodoRepository {
 
     return toDos;
   }
+
+  Future<void> createToDo(ToDo toDo) async {
+    Map<String, dynamic> data = {
+      'title': toDo.title,
+      'description': toDo.description,
+      'createdAt': toDo.createdAt,
+    };
+
+    await _db.addDocument("todos", data);
+  }
+
+  Future<void> deleteToDo(String id) async {
+    await _db.deleteDocument("todos", id);
+  }
+
 }

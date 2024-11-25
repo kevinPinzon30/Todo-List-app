@@ -22,10 +22,10 @@ class TodoLoaded extends TodoState {
   List<Object?> get props => [toDos];
 }
 
-class ToDoError extends TodoState {
+class TodoError extends TodoState {
   final String message;
 
-  const ToDoError(this.message);
+  const TodoError(this.message);
 
   @override
   List<Object?> get props => [message];
